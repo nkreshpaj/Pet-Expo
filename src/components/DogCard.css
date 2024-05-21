@@ -1,0 +1,29 @@
+.dog-card {
+    background-color: #fffdd0;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .dog-card img {
+    width: 100%;
+    height: auto;
+    display: block; 
+    margin: 0 auto; 
+  }
+  
+  .dog-card h2 {
+    font-size: 1.2rem;
+    margin: 16px 0 8px;
+    color: #8b4513;
+  }
+  
+  .dog-card p {
+    color: #8b4513;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
