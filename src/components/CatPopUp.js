@@ -10,10 +10,10 @@ function CatPopUp({ cat, onClose }) {
           <img src={cat.image} alt={`A ${cat.name} cat`} className="cat-image" />
         </div>
         <h2>{cat.name}</h2>
-        <p>Description: {cat.description}</p>
-        <p>Temperament: {cat.temperament}</p>
-        <p>Origin: {cat.origin}</p>
-        <p>Colors: {cat.colors}</p>
+        <p><span style={{fontWeight:'bold'}}>Description:</span>  {cat.description}</p>
+        <p><span style={{fontWeight:'bold'}}>Temperament: </span> {cat.temperament}</p>
+        <p><span style={{fontWeight:'bold'}}>Origin:</span>  {cat.origin}</p>
+        <p><span style={{fontWeight:'bold'}}>Colors: </span> {cat.colors}</p>
       </div>
     </div>
   );

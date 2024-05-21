@@ -10,14 +10,14 @@ function BirdPopUp({ bird, onClose }) {
           <img src={bird.image} alt={`A ${bird.name} bird`} className="bird-image" />
         </div>
         <h2>{bird.name}</h2>
-        <p>Species: {bird.species}</p>
-        <p>Family: {bird.family}</p>
-        <p>Habitat: {bird.habitat}</p>
-        <p>Place of Found: {bird.place_of_found}</p>
-        <p>Diet: {bird.diet}</p>
-        <p>Description: {bird.description}</p>
-        <p>Weight/kg: {bird.weight_kg}</p>
-        <p>Height/cm: {bird.height_cm}</p>
+        <p><span style={{fontWeight:'bold'}}>Species:</span>  {bird.species}</p>
+        <p><span style={{fontWeight:'bold'}}>Family:</span>  {bird.family}</p>
+        <p><span style={{fontWeight:'bold'}}>Habitat:</span>  {bird.habitat}</p>
+        <p><span style={{fontWeight:'bold'}}>Place of Found:</span>  {bird.place_of_found}</p>
+        <p><span style={{fontWeight:'bold'}}>Diet:</span>  {bird.diet}</p>
+        <p><span style={{fontWeight:'bold'}}>Description:</span> {bird.description}</p>
+        <p><span style={{fontWeight:'bold'}}>Weight/kg:</span>  {bird.weight_kg}</p>
+        <p><span style={{fontWeight:'bold'}}>Height/cm:</span>  {bird.height_cm}</p>
       </div>
     </div>
   );

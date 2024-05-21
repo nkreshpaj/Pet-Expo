@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
 .dog-card {
-    background-color: #fffdd0;
+  background: linear-gradient(135deg, #fffdd0, #ffe4b5);
     border: 1px solid #ddd;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -7,6 +10,13 @@
     text-align: center;
     max-width: 300px;
     margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .dog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
   
   .dog-card img {
@@ -14,16 +24,17 @@
     height: auto;
     display: block; 
     margin: 0 auto; 
+    border-bottom: 1px solid #ddd;
   }
   
   .dog-card h2 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin: 16px 0 8px;
     color: #8b4513;
   }
   
   .dog-card p {
     color: #8b4513;
-    font-size: 0.9rem;
-    margin-bottom: 16px;
+    font-size: 1rem;
+    margin: 0 16px 16px;
   }

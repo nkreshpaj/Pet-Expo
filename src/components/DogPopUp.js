@@ -10,13 +10,13 @@ function DogPopUp({ dog, onClose }) {
           <img src={dog.image} alt={`A ${dog.name} dog`} className="dog-image" />
         </div>
         <h2>{dog.name}</h2>
-        <p>Breed Group: {dog.breed_group}</p>
-        <p>Size: {dog.size}</p>
-        <p>Lifespan: {dog.lifespan}</p>
-        <p>Colors: {dog.colors}</p>
-        <p>Description: {dog.description}</p>
-        <p>Temperament: {dog.temperament}</p>
-        <p>Origin: {dog.origin}</p>
+        <p><span style={{fontWeight:'bold'}}>Breed Group:</span> {dog.breed_group}</p>
+        <p><span style={{fontWeight:'bold'}}>Size:</span> {dog.size}</p>
+        <p><span style={{fontWeight:'bold'}}>Lifespan:</span> {dog.lifespan}</p>
+        <p><span style={{fontWeight:'bold'}}>Colors:</span> {dog.colors}</p>
+        <p><span style={{fontWeight:'bold'}}>Description:</span> {dog.description}</p>
+        <p><span style={{fontWeight:'bold'}}>Temperament:</span> {dog.temperament}</p>
+        <p><span style={{fontWeight:'bold'}}>Origin:</span> {dog.origin}</p>
       </div>
     </div>
   );
