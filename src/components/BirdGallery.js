@@ -30,7 +30,8 @@ function BirdGallery() {
   useEffect(() => {
     const filtered = birds.filter(bird =>
       bird.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    )
+    .sort((a, b) => a.name.localeCompare(b.name)); 
     setFilteredBirds(filtered);
   }, [birds, searchTerm]);
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { HiOutlineMenuAlt4 } from 'react-icons/hi';
-import { Link, useHistory } from 'react-router-dom'; 
+import { Link as ScrollLink, useHistory } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {

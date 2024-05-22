@@ -30,7 +30,8 @@ function CatGallery() {
   useEffect(() => {
     const filtered = cats.filter((cat) =>
       cat.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    )
+    .sort((a, b) => a.name.localeCompare(b.name));
     setFilteredCats(filtered);
   }, [cats, searchTerm]);
 

@@ -30,7 +30,8 @@ function DogGallery() {
   useEffect(() => {
     const filtered = dogs.filter(dog =>
       dog.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    )
+    .sort((a, b) => a.name.localeCompare(b.name)); 
     setFilteredDogs(filtered);
   }, [dogs, searchTerm]);
 
