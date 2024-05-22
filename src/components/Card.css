@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-
-.cat-card {
+.card {
   background: linear-gradient(135deg, #fffdd0, #ffe4b5);
   border: 1px solid #ddd;
   border-radius: 20px;
@@ -16,12 +15,12 @@
   max-width: calc(33.33% - 16px);
 }
 
-.cat-card:hover {
+.card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.cat-card img {
+.card img {
   width: 100%;
   height: auto;
   display: block;
@@ -29,13 +28,13 @@
   border-bottom: 1px solid #ddd;
 }
 
-.cat-card h2 {
+.card h2 {
   font-size: 1.4rem;
   margin: 16px 0 8px;
   color: #8b4513;
 }
 
-.cat-card p {
+.card p {
   color: #8b4513;
   font-size: 1rem;
   margin: 0 16px 16px;

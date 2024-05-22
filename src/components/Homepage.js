@@ -4,25 +4,33 @@ import AboutUs from "../assets/aboutus.jpg";
 import {Link} from 'react-router-dom';
 
 function Homepage() {
+  const types = [
+    {
+      name:"CATS",
+      type:"cats"
+    },
+    {
+      name:"DOGS",
+      type:"dogs"
+    },
+    {
+      name:"BIRDS",
+      type:"birds"
+    }
+  ]
   return (
     <div className="homepage">
        <h2 className="title">Choose an animal group</h2>
       <div className="container">
-        <Link to="/CatGallery">
-        <button className="cat-button">
-          <h1 className="cat-name">CATS</h1>
-        </button>
-        </Link>
-        <Link to="/doggallery">
-        <button className="dog-button">
-          <h1 className="dog-name">DOGS</h1>
-        </button>
-        </Link>
-        <Link to="/birdgallery">
-        <button className="bird-button">
-          <h1 className="bird-name">BIRDS</h1>
-        </button>
-        </Link>
+        {types.map((type) => (
+          <div>
+            <Link to={`/gallery/${type.type}`}>
+              <button className="animal-button">
+                <h1 className="animal-name">{type.name}</h1>
+              </button>
+            </Link>
+          </div>
+        ))}
       </div>
       <section id="about-us" className="about-us-section">
         <h2 className="about-us-title">About us</h2>

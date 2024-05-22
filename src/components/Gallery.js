@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from "react";
-import CatCard from "./CatCard";
-import CatPopUp from "./CatPopUp";
-import "./CatGallery.css";
+import Card from "./Card";
+import PopUp from "./PopUp";
+import "./Gallery.css";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
-function CatGallery() {
-  const [cats, setCats] = useState([]);
-  const [filteredCats, setFilteredCats] = useState([]);
+function Gallery({path}) {
+  let { type } = useParams()
+  const [items, setItems] = useState([]);
+  const [filteredItems, setFilteredItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCat, setSelectedCat] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   useEffect(() => {
-    const fetchCats = async () => {
+    const fetchItems = async () => {
       try {
-        const response = await fetch("https://freetestapi.com/api/v1/cats");
+        const response = await fetch("https://freetestapi.com/api/v1/"+type);
         const data = await response.json();
-        setCats(data);
+        setItems(data);
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -24,27 +26,27 @@ function CatGallery() {
       }
     };
 
-    fetchCats();
+    fetchItems();
   }, []);
 
   useEffect(() => {
-    const filtered = cats.filter((cat) =>
-      cat.name.toLowerCase().includes(searchTerm.toLowerCase())
+    const filtered = items.filter((item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())
     )
     .sort((a, b) => a.name.localeCompare(b.name));
-    setFilteredCats(filtered);
-  }, [cats, searchTerm]);
+    setFilteredItems(filtered);
+  }, [items, searchTerm]);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
-  const handleCardClick = (cat) => {
-    setSelectedCat(cat);
+  const handleCardClick = (item) => {
+    setSelectedItem(item);
   };
 
   const handleClosePopUp = () => {
-    setSelectedCat(null);
+    setSelectedItem(null);
   };
 
   if (loading) return <div>Loading...</div>;
@@ -64,13 +66,13 @@ function CatGallery() {
         </div>
       </div>
       <div className="gallery">
-        {filteredCats.map((cat) => (
-          <CatCard key={cat.id} cat={cat} onClick={handleCardClick} />
+        {filteredItems.map((item) => (
+          <Card key={item.id} item={item} onClick={handleCardClick} />
         ))}
       </div>
-      {selectedCat && <CatPopUp cat={selectedCat} onClose={handleClosePopUp} />}
+      {selectedItem&& <PopUp item={selectedItem} onClose={handleClosePopUp} />}
     </div>
   );
 }
 
-export default CatGallery;
+export default Gallery;

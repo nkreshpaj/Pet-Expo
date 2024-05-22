@@ -1,10 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, useParams } from "react-router-dom";
 import Homepage from "./components/Homepage";
 import Navbar from "./components/Navbar";
-import CatGallery from "./components/CatGallery";
-import DogGallery from './components/DogGallery';
-import BirdGallery from './components/BirdGallery';
+import Gallery from "./components/Gallery";
 
 function App() {
   const scrollToSection = (id) => {
@@ -19,17 +17,11 @@ function App() {
       <Router>
       <Navbar scrollToSection={scrollToSection} />
         <Switch >
-          <Route path="/CatGallery" >
-            <CatGallery />
-          </Route>
-          <Route path="/doggallery" >
-            <DogGallery />
-          </Route>
-          <Route path="/birdgallery" >
-            <BirdGallery />
+            <Route path="/gallery/:type" 
+            children={<Gallery />}>
           </Route>
           <Route path="/">
-          <Homepage />
+            <Homepage />
           </Route>
         </Switch>
       </Router>
