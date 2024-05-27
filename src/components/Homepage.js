@@ -2,20 +2,26 @@ import React from "react";
 import "./Homepage.css";
 import AboutUs from "../assets/aboutus.jpg";
 import {Link} from 'react-router-dom';
+import cats from '../assets/cats.jpg'
+import dogs from '../assets/dogs.jpg'
+import birds from '../assets/birds.jpg'
 
 function Homepage() {
   const types = [
     {
       name:"CATS",
-      type:"cats"
+      type:"cats",
+      image: cats,
     },
     {
       name:"DOGS",
-      type:"dogs"
+      type:"dogs",
+      image: dogs
     },
     {
       name:"BIRDS",
-      type:"birds"
+      type:"birds",
+      image: birds
     }
   ]
   return (
@@ -25,7 +31,7 @@ function Homepage() {
         {types.map((type) => (
           <div>
             <Link to={`/gallery/${type.type}`}>
-              <button className="animal-button">
+              <button className="animal-button" style={{backgroundImage: `url(${type.image})`}}>
                 <h1 className="animal-name">{type.name}</h1>
               </button>
             </Link>
